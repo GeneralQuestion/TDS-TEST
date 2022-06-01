@@ -1,6 +1,10 @@
 repeat wait()until game:IsLoaded()
 wait()
-    queue_on_teleport("loadstring(readfile(\"TDS_AutoStrat/LastStrat.txt\"))()")
+local P={} if not getgenv().ExecutedAlr then if syn and not getgenv().IsMultiStrat and not getgenv().ExecDis and not getgenv().Multiplayer then 
+    syn.queue_on_teleport("loadstring(readfile(\"TDS_AutoStrat/Last_Strat.txt\"))()") 
+elseif not getgenv().IsMultiStrat and not getgenv().ExecDis and not getgenv().Multiplayer then 
+    queue_on_teleport("loadstring(readfile(\"TDS_AutoStrat/Last_Strat.txt\"))()")
+end 
     getgenv().ExecutedAlr=true getgenv().MapUsed=false loadstring(game:HttpGet("https://raw.githubusercontent.com/banbuskox/dfhtyxvzexrxgfdzgzfdvfdz/main/ikcxujvkdsStrat"))()loadstring(game:HttpGet("https://banbusscripts.netlify.app/Scripts/IsAutoStratMain"))()if getgenv().StratMaintance==true then
             repeat wait()
                 loadstring(game:HttpGet("https://banbusscripts.netlify.app/Scripts/IsAutoStratMain"))()getgenv().status="Script in maintenance, waiting..."wait(1)until getgenv().StratMaintance==false or getgenv().SkipStratMaintance==true 
